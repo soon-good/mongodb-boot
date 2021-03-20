@@ -1,0 +1,10 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb://mongoadmin:1111@localhost:27039/codingtest
+#      authentication-database: admin
+#      username: mongoadmin
+#      password: 1111
+#      database: codingtest
+#      host: localhost
+#      port: 27039
