@@ -1,10 +1,20 @@
+server:
+  port: 80
+
 spring:
+  profiles:
+    active: testdocker
+---
+spring:
+  profiles: testdocker
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
   data:
     mongodb:
-      uri: mongodb://mongoadmin:1111@localhost:27039/codingtest
-#      authentication-database: admin
-#      username: mongoadmin
-#      password: 1111
-#      database: codingtest
-#      host: localhost
-#      port: 27039
+      uri: mongodb://mongoadmin:1111@localhost:27039
+      authentication-database: admin
+      username: mongoadmin
+      password: 1111
+      host: localhost
+      port: 27039
