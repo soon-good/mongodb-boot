@@ -301,13 +301,13 @@ public class EmployeeDto {
 
 localhost/employees/insert 로 접속해보면 아래와 같은 출력결과가 나타난다.
 
-![이미지](./REACTIVE_MONGODB_WEB_RESULT.png)
+![이미지](./img/REACTIVE_MONGODB_WEB_RESULT.png)
 
 
 
 Database 에 직접 INSERT 된 결과를 확인해보면 아래와 같다.
 
-![이미지](./REACTIVE_MONGODB_DB_RESULT.png)
+![이미지](./img/REACTIVE_MONGODB_DB_RESULT.png)
 
 
 
