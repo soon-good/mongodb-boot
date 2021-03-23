@@ -13,15 +13,17 @@ then
 
     if [ $? -lt 1 ]; then
       mkdir -p ~$USER/env/docker/codingtest/volumes/codingtest-mongodb
+      mkdir -p ~$USER/env/docker/codingtest/volumes/codingtest-mongodb/data-db
+      mkdir -p ~$USER/env/docker/codingtest/volumes/codingtest-mongodb/etc-mongo
     fi
 
     # mongodb 컨테이너 구동 & 볼륨 마운트
     docker container run --rm -d -p 27039:27017 --name codingtest-mongodb \
-                -v ~/env/docker/codingtest/volumes/codingtest-mongodb:/data/db \
-                -e MONGO_INITDB_DATABASE=codingtest \
+                -v ~/env/docker/codingtest/volumes/codingtest-mongodb/data-db:/data/db \
+                -v ~/env/docker/codingtest/volumes/codingtest-mongodb/etc-mongo:/etc/mongo \
                 -e MONGO_INITDB_ROOT_USERNAME=mongoadmin \
                 -e MONGO_INITDB_ROOT_PASSWORD=1111 \
-                -d mongo:3.6.22-xenial
+                -d mongo
 
 else
     echo "'$name_codingtest_mongodb' 컨테이너가 존재합니다. 기존 컨테이너를 중지하고 삭제합니다."
@@ -38,14 +40,16 @@ else
 
     if [ $? -lt 1 ]; then
       mkdir -p ~$USER/env/docker/codingtest/volumes/codingtest-mongodb
+      mkdir -p ~$USER/env/docker/codingtest/volumes/codingtest-mongodb/data-db
+      mkdir -p ~$USER/env/docker/codingtest/volumes/codingtest-mongodb/etc-mongo
     fi
 
     # mongodb 컨테이너 구동 & 볼륨 마운트
     docker container run --rm -d -p 27039:27017 --name codingtest-mongodb \
-                -v ~/env/docker/codingtest/volumes/codingtest-mongodb:/data/db \
-                -e MONGO_INITDB_DATABASE=codingtest \
+                -v ~/env/docker/codingtest/volumes/codingtest-mongodb/data-db:/data/db \
+                -v ~/env/docker/codingtest/volumes/codingtest-mongodb/etc-mongo:/etc/mongo \
                 -e MONGO_INITDB_ROOT_USERNAME=mongoadmin \
                 -e MONGO_INITDB_ROOT_PASSWORD=1111 \
-                -d mongo:3.6.22-xenial
+                -d mongo
 
 fi
