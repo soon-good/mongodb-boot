@@ -14,7 +14,7 @@ spring:
     mongodb:
       uri: mongodb://mongoadmin:1111@localhost:27039
       authentication-database: admin
-      username: mongoadmin
-      password: 1111
-      host: localhost
-      port: 27039
+#      username: mongoadmin
+#      password: 1111
+#      host: localhost
+#      port: 27039
